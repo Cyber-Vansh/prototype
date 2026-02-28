@@ -5,9 +5,9 @@ export default function Screen1SelectMess({ onNext, updateData, initialData }) {
   const [hostel, setHostel] = useState(initialData?.hostel || '');
   const [provider, setProvider] = useState(initialData?.provider || '');
 
-  const handleNext = () => {
+  const handleNext = (isCustom = false) => {
     updateData({ hostel, provider });
-    onNext();
+    onNext(isCustom);
   };
 
   const isComplete = hostel && provider;
