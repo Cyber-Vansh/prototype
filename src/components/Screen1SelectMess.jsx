@@ -75,14 +75,22 @@ export default function Screen1SelectMess({ onNext, updateData, initialData }) {
         </div>
       </div>
 
-      <div style={{ marginTop: '32px', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
         <button 
           className="primary-btn" 
           style={{ width: '100%', padding: '16px' }}
-          onClick={handleNext}
+          onClick={() => handleNext(false)}
           disabled={!isComplete}
         >
           Sync Diet Data <ArrowRight size={20} />
+        </button>
+        
+        <button 
+          className="secondary-btn" 
+          style={{ width: '100%', padding: '16px', fontSize: '0.9rem' }}
+          onClick={() => handleNext(true)}
+        >
+          My mess isn't listed (Custom Upload)
         </button>
       </div>
     </div>
